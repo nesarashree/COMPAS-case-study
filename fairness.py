@@ -1,11 +1,10 @@
 """
-This script explores bias and fairness in machine learning using the COMPAS dataset.
 1. Data cleaning & exploratory analysis
 2. Baseline predictive models
 3. Fairness analysis across race
 4. Reflections on fairness interventions
 
-Dataset: Broward County, FL COMPAS records (ProPublica)
+This project is based on the “AI and Ethics: Criminal Justice” course by Inspirit AI (2023).
 """
 
 import pandas as pd
