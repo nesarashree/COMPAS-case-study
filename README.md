@@ -7,15 +7,31 @@ ProPublica found cases where defendants with similar charges received very diffe
   <img src="images/compas2.png" alt="Image 2" width="25%">
 </p>
 
-Statistically, this bias is clear: Black defendants were nearly twice as likely to be labeled “high risk” but not reoffend (44.9% vs. 23.5%). White defendants were more often labeled “low risk” yet did reoffend (47.7% vs. 28.0%).
+Statistically, this bias is clear: Black defendants were nearly twice as likely to be labeled “high risk” but not reoffend (44.9% vs. 23.5%). White defendants were more often labeled “low risk” yet did reoffend (47.7% vs. 28.0%). These unequal error rates are problematic because they affect bail, sentencing, and parole decisions, reinforcing existing racial inequities.
 
 <p align="center">
   <img src="images/predictionfails.png" width="500px" />
 </p>
 
-These unequal error rates are problematic because they affect bail, sentencing, and parole decisions, reinforcing existing racial inequities. This project uses the Broward County COMPAS dataset to examine these patterns and explore definitions of fairness in AI models.
 
-## Fairness in Machine Learning
+## COMPAS Dataset
+This project uses the Broward County (FL) dataset, covering criminal defendants who underwent COMPAS assessments, to examine these patterns and explore definitions of fairness in AI models.
+
+**Demographics**
+- Predominantly Caucasian and African-American defendants  
+- *Gender imbalance*: more than **4:1 ratio** of men to women
+
+**Key Variables**
+- 'prior_convictions': Number of prior convictions  
+- 'current_charge': felony (**F**), misdemeanor (**M**), or other (**O**)
+- 'charge_description': Description of the arrest charge  
+- 'recidivated_last_two_years': Whether the defendant reoffended within two years (*prediction target*)
+
+<p align="center">
+  <img src="images/vars.png" width="800px" />
+</p>  
+
+## Fairness in Machine Learning (fairness.py)
 
 There are many ways to define fairness in machine learning.  
 Here, we focus on **Group Fairness**.
@@ -34,24 +50,7 @@ $$
 ### Beyond Statistical Parity
 We also examine **False Positive Rates (FPR)** and **False Negative Rates (FNR)** across groups, following the principle of *equal harm/benefit*.
 
-## COMPAS Dataset
-The dataset comes from Broward County, FL public records, covering criminal defendants who underwent COMPAS assessments.
-
-**Demographics
-**- Predominantly Caucasian and African-American defendants  
-- *Gender imbalance*: more than **4:1 ratio** of men to women
-
-**Key Variables**
-- 'prior_convictions': Number of prior convictions  
-- 'current_charge': felony (**F**), misdemeanor (**M**), or other (**O**)
-- 'charge_description': Description of the arrest charge  
-- 'recidivated_last_two_years': Whether the defendant reoffended within two years (*prediction target*)
-
-<p align="center">
-  <img src="images/vars.png" width="800px" />
-</p>  
-
-## Results
+## Results (model_eval.py)
 ### Model 1: Baseline
 - Accuracy: ~63–64% across groups (similar)
 - FPR (False Positive Rate): Higher for African-American defendants (37.2% vs. 26.8%)
@@ -62,7 +61,6 @@ The dataset comes from Broward County, FL public records, covering criminal defe
 </p>
 
 ### Model 2: Alternative Model (sans race)
-
 Accuracy: 67.9% (slightly improved overall)
 FPR Gap: Still large (18.2% vs. 28.4%)
 FNR Gap: Caucasians still more likely to be misclassified as low-risk (64.6% vs. 35.2%)
