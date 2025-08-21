@@ -1,12 +1,19 @@
 # COMPAS-case-study
-COMPAS is an algorithmic risk-assessment tool used in U.S. jurisdictions (including New York, Wisconsin, California, and Broward County, FL) to predict whether a defendant is likely to reoffend (recidivate). The hope was that a machine learning model could be less biased than human judges, producing more equitable outcomes.
+COMPAS is an algorithmic risk-assessment tool used in U.S. courts to predict whether a defendant is likely to reoffend. It was intended to be less biased than human judges, but evidence shows it produces systematic racial disparities.
 
-However, evidence suggests that COMPAS predictions may not be truly unbiased, raising critical questions about the fairness of algorithmic decision-making in the criminal justice system. This repository investigates those issues using the Broward County dataset, made public by ProPublica.
-
+ProPublica found cases where defendants with similar charges received very different risk scores: white defendants with repeated offenses were often rated low risk, while Black defendants with fewer offenses were rated medium or high risk.
 <p align="center">
   <img src="images/compas1.png" alt="Image 1" width="25%">
   <img src="images/compas2.png" alt="Image 2" width="25%">
 </p>
+
+Statistically, this bias is clear: Black defendants were nearly twice as likely to be labeled “high risk” but not reoffend (44.9% vs. 23.5%). White defendants were more often labeled “low risk” yet did reoffend (47.7% vs. 28.0%).
+
+<p align="center">
+  <img src="images/predictionfails.png" width="500px" />
+</p>
+
+These unequal error rates are problematic because they affect bail, sentencing, and parole decisions, reinforcing existing racial inequities. This project uses the Broward County COMPAS dataset to examine these patterns and explore definitions of fairness in AI models.
 
 ## Fairness in Machine Learning
 
@@ -30,15 +37,19 @@ We also examine **False Positive Rates (FPR)** and **False Negative Rates (FNR)*
 ## COMPAS Dataset
 The dataset comes from Broward County, FL public records, covering criminal defendants who underwent COMPAS assessments.
 
-Key Variables
+**Demographics
+**- Predominantly Caucasian and African-American defendants  
+- *Gender imbalance*: more than **4:1 ratio** of men to women
+
+**Key Variables**
 - 'prior_convictions': Number of prior convictions  
 - 'current_charge': felony (**F**), misdemeanor (**M**), or other (**O**)
 - 'charge_description': Description of the arrest charge  
-- 'recidivated_last_two_years': Whether the defendant reoffended within two years (*prediction target*)  
+- 'recidivated_last_two_years': Whether the defendant reoffended within two years (*prediction target*)
 
-Demographics
-- Predominantly Caucasian and African-American defendants  
-- *Gender imbalance*: more than **4:1 ratio** of men to women
+<p align="center">
+  <img src="images/vars.png" width="800px" />
+</p>  
 
 ## Results
 ### Model 1: Baseline
