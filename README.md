@@ -15,11 +15,7 @@ Statistically, this bias is clear: Black defendants were nearly twice as likely 
 
 
 ## COMPAS Dataset
-This project uses the Broward County (FL) dataset, covering criminal defendants who underwent COMPAS assessments, to examine these patterns and explore definitions of fairness in AI models.
-
-**Demographics**
-- Predominantly Caucasian and African-American defendants  
-- *Gender imbalance*: more than **4:1 ratio** of men to women
+This project uses the Broward County (FL) dataset, covering criminal defendants who underwent COMPAS assessments, to examine these patterns and explore definitions of fairness in AI models. The demographic is predominantly Caucasian and African-American defendants with a gender imbalance of approx. 4:1, male:female.
 
 **Key Variables**
 - 'prior_convictions': Number of prior convictions  
