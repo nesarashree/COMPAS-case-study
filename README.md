@@ -1,5 +1,5 @@
 # Fairness Analysis of COMPAS Risk Assessment Tool
-COMPAS is an algorithmic risk-assessment tool used in U.S. courts to predict whether a defendant is likely to reoffend. It was intended to be less biased than human judges, but evidence shows it produces systematic racial disparities.
+Correctional Offender Management Profiling for Alternative Sanctions (COMPAS) is an algorithmic risk-assessment tool used in U.S. courts to predict whether a defendant is likely to reoffend. It was intended to be less biased than human judges, but evidence shows it produces systematic racial disparities.
 
 ProPublica found cases where defendants with similar charges received very different risk scores: white defendants with repeated offenses were often rated low risk, while Black defendants with fewer offenses were rated medium or high risk.
 <p align="center">
