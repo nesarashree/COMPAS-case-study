@@ -69,5 +69,6 @@ FNR Gap: Caucasians still more likely to be misclassified as low-risk (64.6% vs.
 
 ## Conclusions
 * Accuracy alone is misleading. While both groups had similar overall accuracy, error types (false positives/negatives) were unevenly distributed.
-* Impact of imbalance: African-Americans were more likely to be labeled as high risk when they did not reoffend, while Caucasians were more likely to be labeled as low risk when they did reoffend.
 * Fairness trade-offs: Improving one metric (e.g., lowering FPR for Caucasians) may worsen another (e.g., increasing FNR).
+
+*This project is based on the “AI and Ethics: Criminal Justice” course by Inspirit AI (2023).*
