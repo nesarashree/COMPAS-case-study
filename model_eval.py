@@ -3,6 +3,8 @@ Here, we use COMPAS to explore how different models make predictions and whether
 1. Training multiple predictive models (Logistic Regression, SVM, Random Forest, Neural Network)
 2. Analyzing bias and fairness across groups
 3. Exploring model explainability with different algorithms
+
+This project is based on the “AI and Ethics: Criminal Justice” course by Inspirit AI (2023).
 """
 
 # Imports
