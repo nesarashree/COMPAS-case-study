@@ -107,9 +107,7 @@ plot_confusion_matrix(model_nr, remove_race(caucasian), y_test[caucasian.index],
 plot_confusion_matrix(model_nr, remove_race(african_american), y_test[african_american.index], cmap=plt.cm.Blues, values_format='d')
 plt.show()
 
-''' 
-Removing race did not resolve disparities; fairness issues persist, likely via proxy variables (priors, zip codes, etc.)
-'''
+# Removing race did not resolve disparities; fairness issues persist, likely via proxy variables (priors, zip codes, etc.)
 
 '''
 REFLECTIONS:
