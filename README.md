@@ -17,13 +17,9 @@ Here, we focus on **Group Fairness**.
 
 A classifier satisfies group fairness if all demographic groups are equally likely to be predicted as positive in a binary classification problem.
 
-**Formally:**
-
 $$
 P(\hat{y} = 1 \mid A = a) = P(\hat{y} = 1 \mid A = b)
 $$
-
-where:
 - $\hat{y}$ = model’s prediction  
 - $A$ = sensitive attribute (e.g., race)  
 - $a, b$ = different groups  
@@ -32,20 +28,20 @@ where:
 We also examine **False Positive Rates (FPR)** and **False Negative Rates (FNR)** across groups, following the principle of *equal harm/benefit*.
 
 ## COMPAS Dataset
-The dataset comes from **Broward County, FL** public records, covering criminal defendants who underwent COMPAS assessments.
+The dataset comes from Broward County, FL public records, covering criminal defendants who underwent COMPAS assessments.
 
-### Key Variables
+Key Variables
 - 'prior_convictions': Number of prior convictions  
 - 'current_charge': felony (**F**), misdemeanor (**M**), or other (**O**)
 - 'charge_description': Description of the arrest charge  
 - 'recidivated_last_two_years': Whether the defendant reoffended within two years (*prediction target*)  
 
-### Demographics
+Demographics
 - Predominantly Caucasian and African-American defendants  
 - *Gender imbalance*: more than **4:1 ratio** of men to women
 
 ## Results
-Model 1: Baseline
+### Model 1: Baseline
 - Accuracy: ~63–64% across groups (similar)
 - FPR (False Positive Rate): Higher for African-American defendants (37.2% vs. 26.8%)
 - FNR (False Negative Rate): Higher for Caucasian defendants (53.7% vs. 34.3%)
@@ -54,7 +50,7 @@ Model 1: Baseline
   <img src="images/InitialAnalysis.png" width="500px" />
 </p>
 
-Model 2: Alternative Model (sans race)
+### Model 2: Alternative Model (sans race)
 
 Accuracy: 67.9% (slightly improved overall)
 FPR Gap: Still large (18.2% vs. 28.4%)
