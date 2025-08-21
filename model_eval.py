@@ -1,5 +1,4 @@
 """
-Here, we use COMPAS to explore how different models make predictions and whether they behave fairly across racial groups.
 1. Training multiple predictive models (Logistic Regression, SVM, Random Forest, Neural Network)
 2. Analyzing bias and fairness across groups
 3. Exploring model explainability with different algorithms
